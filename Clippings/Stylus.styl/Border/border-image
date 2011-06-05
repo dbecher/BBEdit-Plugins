@@ -1,0 +1,3 @@
+border-image url(#placeholderstart#images/#placeholderend#) #placeholderstart#slice: top left bottom right#placeholderend# #placeholderstart#width: top left bottom right#placeholderend# #placeholderstart#outset: top left bottom right#placeholderend# #placeholderstart#repeat#placeholderend#
+#indent#
+#inline#
