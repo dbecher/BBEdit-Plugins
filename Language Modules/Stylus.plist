@@ -32,16 +32,30 @@
         <string>rad</string>
         <string>s</string>
         <string>url</string>
-        <string>rgb</string>
         <string>rect</string>
-        <string>!important</string>
         <string>important</string>
+        <string>!important</string>
         <string>active</string>
         <string>after</string>
         <string>before</string>
         <string>first-child</string>
         <string>first-letter</string>
         <string>first-line</string>
+        <string>last-child</string>
+        <string>nth-child</string>
+        <string>nth-last-child</string>
+        <string>first-of-type</string>
+        <string>last-of-type</string>
+        <string>nth-last-of-type</string>
+        <string>nth-of-type</string>
+        <string>only-child</string>
+        <string>only-of-type</string>
+        <string>empty</string>
+        <string>target</string>
+        <string>enabled</string>
+        <string>disabled</string>
+        <string>checked</string>
+        <string>not</string>
         <string>focus</string>
         <string>hover</string>
         <string>lang</string>
@@ -56,6 +70,7 @@
         <string>return</string>
         <string>is a</string>
         <string>arguments</string>
+        <string>current-property</string>
         <string>&amp;</string>
 	</array>
 	<key>BBLMPredefinedNameList</key>
@@ -85,7 +100,9 @@
         <string>sum</string>
         <string>avg</string>
         <string>join</string>
+        <string>hsl</string>
         <string>hsla</string>
+        <string>rgb</string>
         <string>rgba</string>
         <string>lighten</string>
         <string>darken</string>
@@ -933,52 +950,34 @@
 			<string>.styl</string>
 		</dict>
 	</array>
+	<key>BBLMReferenceSearchURLTemplate</key>
+	<string>https://developer.mozilla.org/en/CSS/__SYMBOLNAME__</string>
 	<key>Language Features</key>
 	<dict>
+		<key>Open Statement Blocks</key>
+		<string>// @group</string>
+		<key>Close Statement Blocks</key>
+		<string>// @end</string>
 		<key>Comment Pattern</key>
 		<string>(?x:
 			(?&gt;	//		.*			$				) |
 			(?&gt;	/\*		(?s:.*?)	(?: \*/ | \z )	)
 		)</string>
 		<key>Function Pattern</key>
-		<string>(?x:
-			(?P&lt;function&gt;
-
-                ^
-                (?P&lt;function_name&gt;
-                    (?&gt; [A-Za-z0-9_-]* )
-                )
-                
-                (?:
-                    (?&gt;
-                        (?&gt; \s+ ) | (?P&gt;comment) | (?P&gt;string)
-                    )
-                )*
-                
-                (?P&lt;parens&gt;
-                    \(
-                        (?:
-                            (?&gt;
-                                (?&gt; [^&apos;&quot;()]+ ) | (?: / (?![/*]) ) | (?P&gt;comment) | (?P&gt;string) | (?P&gt;parens)
-                            )
-                        )*
-                    \)
-                )
-                
-                (?:
-                    (?&gt;
-                        (?&gt; \s+ ) | (?P&gt;comment)
-                    )
-                )*
-                
-                \s*
-                
-                $
-				(?s) .*?
-			)
-		)</string>
+		<string><![CDATA[(?x:
+      (?P<leadspace>^\s*)                       (?# Capture leading indentation)
+      (?P<function>                             (?# Functions are defined by: <function_name><open_paren><string><close_paren>)
+        (?P<function_name>                      
+          [a-zA-Z0-9_-]+
+        )
+        \(.*?\)[ \t]*$                           (?# Parameters, followed by optional spaces or tabs)
+        (?m:                                    (?# Capture subsequent lines that are indented by the same)
+          \r(?P=leadspace)[ \t]+(?:.+)          (?#   ammount as the first line, then at least one space or)
+        )+                                      (?#   tab, then any text)
+      )
+    )]]></string>
 		<key>Identifier and Keyword Character Class</key>
-		<string>0-9A-Z_a-z-</string>
+		<string>A-Z_a-z-@!%#</string>
 		<key>Skip Pattern</key>
 		<string>(?x:
 			(?&gt;
