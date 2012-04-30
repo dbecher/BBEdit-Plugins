@@ -22,19 +22,29 @@
     <key>BBLMIsCaseSensitive</key>
     <false/>
     <key>BBLMScansFunctions</key>
-    <false/>
+    <true/>
     <key>BBLMSupportsTextCompletion</key>
     <true/>
     <key>BBLMKeywordList</key>
-	<array>
+	  <array>
         <string><![CDATA[!!!]]></string>
 	    <string><![CDATA[doctype]]></string>
 	    <string><![CDATA[var]]></string>
 	    <string><![CDATA[each]]></string>
         <string><![CDATA[if]]></string>
         <string><![CDATA[else]]></string>
+        <string><![CDATA[unless]]></string>
+        <string><![CDATA[block]]></string>
+        <string><![CDATA[prepend]]></string>
+        <string><![CDATA[append]]></string>
+        <string><![CDATA[extends]]></string>
+        <string><![CDATA[include]]></string>
+        <string><![CDATA[yield]]></string>
+        <string><![CDATA[mixin]]></string>
+        <string><![CDATA[case]]></string>
         <string><![CDATA[:markdown]]></string>
         <string><![CDATA[:sass]]></string>
+        <string><![CDATA[:stylus]]></string>
         <string><![CDATA[:less]]></string>
         <string><![CDATA[:cdata]]></string>
         <string><![CDATA[:coffeescript]]></string>
@@ -140,22 +150,44 @@
         <string>audio</string>
         <string>video</string>
     </array>
+    <key>BBLMCanSpellCheckCodeRuns</key>
+    <true/>
+    <key>BBLMReferenceSearchURLTemplate</key>
+    <string>https://github.com/visionmedia/jade?#__SYMBOLNAME__</string>
     <key>Language Features</key>
     <dict>
         <key>Comment Pattern</key>
-        <string>(?x:
-			(?&gt;	//		.*			$				) |
-			(?&gt;	\&lt;\!--		(?s:.*?)	(?: --\&gt; | \z )	)
-		)</string>
-        
+        <string><![CDATA[(?x:
+          (?>                                       (?# Jade-style comment using //)
+            ^(?P<leadspace>^\s*)                    (?# Capture leading whitespace before comment delimiter)
+            \/\/.*$                                 (?# First line of comment)
+            (?m:                                    (?# Capture subsequent lines that are indented by the same)
+              \r(?P=leadspace)[ \t]+(?:.+)          (?#   ammount as the first line, then at least one space or)
+            )*                                      (?#   tab, then any amount of text)
+          ) |
+          (?>	\<\!--		(?s:.*?)	(?: --\> | \z )	) (?# HTML-style comment)
+        )]]></string>
+        <key>Function Pattern</key>
+        <string><![CDATA[(?x:                       (?# Map blocks to functions)
+          (?P<leadspaces>^\s*)                      (?# Capture leading indentation)
+          (?P<function>                             (?# Blocks are defined by: block <string>)
+            block[ \t]+
+            (?P<function_name>                      (?# Function name is the name of the block)
+              [a-zA-Z0-9_-]+
+            )
+            [ \t]*$                                 (?# optional spaces or tabs at end of line)
+            (?m:                                    (?# Capture subsequent lines that are indented by the same)
+              \r(?P=leadspaces)[ \t]+(?:.+)         (?#   ammount as the first line, then at least one space or)
+            )+                                      (?#   tab, then any text)
+          )
+        )]]></string>
         <key>Identifier and Keyword Character Class</key>
-        <!-- Example: <string>a-zA-Z0-9_</string> -->
         <string><![CDATA[a-zA-Z0-9-_!]]></string>
-        
         <key>String Pattern</key>
         <string><![CDATA[(?x:
             (".+?")    |
-            ('.+?')
+            ('.+?')    |
+            (\#\{.+?\})
         )]]></string>
     </dict>
 </dict>
