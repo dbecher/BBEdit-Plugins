@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+		<dict>
+    <key>BBEditDocumentType</key>
+    <string>CodelessLanguageModule</string>
+    <key>com.barebones.DocumentType</key>
+    <string>CodelessLanguageModule</string>
+    <key>BBLMLanguageCode</key>
+    <string><![CDATA[CoSc]]></string>
+    <key>BBLMLanguageDisplayName</key>
+    <string><![CDATA[CoffeeScript]]></string>
+    <key>BBLMSuffixMap</key>
+    <array>
+        <dict>
+            <key>BBLMLanguageSuffix</key>
+            <string><![CDATA[.coffee]]></string>
+        </dict>
+        <dict>
+            <key>BBLMLanguageSuffix</key>
+            <string><![CDATA[.js]]></string>
+        </dict>
+    </array>
+    <key>BBLMPreferredFilenameExtension</key>
+    <string>coffee</string>
+    <key>BBLMColorsSyntax</key>
+    <true/>
+    <key>BBLMIsCaseSensitive</key>
+    <false/>
+    <key>BBLMScansFunctions</key>
+    <true/>
+    <key>BBLMSupportsTextCompletion</key>
+    <true/>
+    <key>BBLMCommentLineDefault</key>
+    <string>#</string>
+    <key>BBLMKeywordList</key>
+    <array>
+        <string>@</string>
+        <string>abstract</string>
+        <string>and</string>
+        <string>arguments</string>
+        <string>as</string>
+        <string>boolean</string>
+        <string>break</string>
+        <string>byte</string>
+        <string>case</string>
+        <string>catch</string>
+        <string>char</string>
+        <string>class</string>
+        <string>comment</string>
+        <string>const</string>
+        <string>continue</string>
+        <string>debugger</string>
+        <string>default</string>
+        <string>delete</string>
+        <string>do</string>
+        <string>double</string>
+        <string>else</string>
+        <string>enum</string>
+        <string>export</string>
+        <string>extends</string>
+        <string>false</string>
+        <string>final</string>
+        <string>finally</string>
+        <string>float</string>
+        <string>for</string>
+        <string>function</string>
+        <string>goto</string>
+        <string>if</string>
+        <string>implements</string>
+        <string>import</string>
+        <string>in</string>
+        <string>instanceof</string>
+        <string>int</string>
+        <string>interface</string>
+        <string>is</string>
+        <string>isnt</string>
+        <string>label</string>
+        <string>long</string>
+        <string>namespace</string>
+        <string>native</string>
+        <string>new</string>
+        <string>no</string>
+        <string>not</string>
+        <string>null</string>
+        <string>of</string>
+        <string>off</string>
+        <string>on</string>
+        <string>or</string>
+        <string>own</string>
+        <string>package</string>
+        <string>private</string>
+        <string>protected</string>
+        <string>public</string>
+        <string>return</string>
+        <string>short</string>
+        <string>static</string>
+        <string>super</string>
+        <string>switch</string>
+        <string>synchronized</string>
+        <string>then</string>
+        <string>this</string>
+        <string>throw</string>
+        <string>throws</string>
+        <string>transient</string>
+        <string>true</string>
+        <string>try</string>
+        <string>typeof</string>
+        <string>undefined</string>
+        <string>unless</string>
+        <string>until</string>
+        <string>use</string>
+        <string>var</string>
+        <string>void</string>
+        <string>volatile</string>
+        <string>when</string>
+        <string>while</string>
+        <string>with</string>
+        <string>yes</string>
+    </array>
+    <key>BBLMPredefinedNameList</key>
+    <array>
+        <string>alert</string>
+        <string>Array</string>
+        <string>Blob</string>
+        <string>Boolean</string>
+        <string>clearInterval</string>
+        <string>clearTimeout</string>
+        <string>console</string>
+        <string>Date</string>
+        <string>decodeURI</string>
+        <string>decodeURIComponent</string>
+        <string>document</string>
+        <string>Document</string>
+        <string>encodeURI</string>
+        <string>encodeURIComponent</string>
+        <string>Error</string>
+        <string>escape</string>
+        <string>eval</string>
+        <string>EvalError</string>
+        <string>File</string>
+        <string>FileList</string>
+        <string>FileReader</string>
+        <string>FileUpload</string>
+        <string>frames</string>
+        <string>Function</string>
+        <string>Image</string>
+        <string>Infinity</string>
+        <string>isFinite</string>
+        <string>isNaN</string>
+        <string>Math</string>
+        <string>NaN</string>
+        <string>Number</string>
+        <string>Object</string>
+        <string>parseFloat</string>
+        <string>parseInt</string>
+        <string>RangeError</string>
+        <string>ReferenceError</string>
+        <string>RegExp</string>
+        <string>setInterval</string>
+        <string>setTimeout</string>
+        <string>String</string>
+        <string>SyntaxError</string>
+        <string>TypeError</string>
+        <string>unescape</string>
+        <string>URIError</string>
+        <string>window</string>
+        <string>XMLHttpRequest</string>
+    </array>
+    <key>Language Features</key>
+    <dict>
+        <key>Comment Pattern</key>
+        <string><![CDATA[(?x:
+          (?s:\#\#\#.*?\#\#\#) |
+          (?> \#.*$)
+        )]]></string>
+        <key>String Pattern</key>
+        <string><![CDATA[(?x:
+          (?s: 
+            (?P<strstart>(?:"""|"|'''|'|(\/\/\/)|(\/)|\`))  (?# Open of string is 1 or 3 single or double quotes or one or)
+            .*?                                             (?#  three forward slashes for regexes or a backtick for embedded JS)
+            (?<!\\)(?P=strstart)                            (?# Close of string, not preceded by a backslash)
+            (?(4)[a-zA-Z]*)                                 (?# if backreferences 4 or 5 are set then the string was a regex)
+            (?(5)[a-zA-Z]*)                                 (?#  so match the optional regex options at the end)
+          )
+        )]]></string>
+        <key>Function Pattern</key>
+        <string><![CDATA[(?x:
+          (?P<leadspace>^\s*)                       (?# Capture leading indentation)
+          (?P<function>                             (?# Functions are defined by: <function_name><equals_sign><open_paren><string><close_paren><arrow>)
+            (?P<function_name>                      
+              [a-zA-Z0-9_-]+                        (?# function name)
+              (?: [\:]{2} [a-zA-Z0-9_-]* )?         (?# prototype assignment looks like String::dasherize)
+            )
+            [ \t]* (?:(\=|\:)) [ \t]*               (?# Equals sign or colon with optional spaces around it)
+            (?:\(.*?\)[ \t]*)?                      (?# optional parameters, followed by optional spaces or tabs)
+            (?:(\=|\-))\>[ \t]*                     (?# Regular or fat arrow, optional space)
+            .*$                                     (?# One-line functions are OK)
+            (?m:                                    (?# Capture subsequent lines that are indented by the same)
+              \r(?P=leadspace)[ \t]+(?:.+)          (?#   ammount as the first line, then at least one space or)
+            )*                                      (?#   tab, then any text)
+          )
+        )]]></string>
+        <key>Identifier and Keyword Character Class</key>
+        <string><![CDATA[a-zA-Z0-9-_!]]></string>
+    </dict>
+		</dict>
+</plist>
