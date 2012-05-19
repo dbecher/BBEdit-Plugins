@@ -308,7 +308,7 @@
         <string>image-orientation</string>
         <string>image-resolution</string>
         <string>indent-edge-reset</string>
-        <string>inline-box-align</string>
+        <!-- <string>inline-box-align</string> -->
         <string>interpret-as</string>
         <string>kerning-mode</string>
         <string>kerning-pair-threshold</string>
