@@ -16,10 +16,6 @@
             <key>BBLMLanguageSuffix</key>
             <string><![CDATA[.coffee]]></string>
         </dict>
-        <dict>
-            <key>BBLMLanguageSuffix</key>
-            <string><![CDATA[.js]]></string>
-        </dict>
     </array>
     <key>BBLMPreferredFilenameExtension</key>
     <string>coffee</string>
