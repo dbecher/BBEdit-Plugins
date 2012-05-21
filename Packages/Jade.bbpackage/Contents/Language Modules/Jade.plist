@@ -171,7 +171,7 @@
         <string><![CDATA[(?x:                       (?# Map blocks to functions)
           (?P<leadspaces>^\s*)                      (?# Capture leading indentation)
           (?P<function>                             (?# Blocks are defined by: block <string>)
-            block[ \t]+
+            ((?:block(?:[ ]+ (?:append) | (?:prepend))?) | (?:append) | (?:prepend)) [ \t]+
             (?P<function_name>                      (?# Function name is the name of the block)
               [a-zA-Z0-9_-]+
             )
@@ -188,6 +188,14 @@
             (".+?")    |
             ('.+?')    |
             (\#\{.+?\})
+        )]]></string>
+        <key>Skip Pattern</key>
+        <string><![CDATA[(?x:
+            (?P>comment) |
+            (?P>string) |
+            (?:
+              $[ \t]+ [a-zA-Z0-9]+ [ \t]+ .*^
+            )
         )]]></string>
     </dict>
 </dict>
