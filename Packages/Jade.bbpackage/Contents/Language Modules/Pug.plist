@@ -7,14 +7,14 @@
     <key>com.barebones.DocumentType</key>
     <string>CodelessLanguageModule</string>
     <key>BBLMLanguageCode</key>
-    <string><![CDATA[JADE]]></string>
+    <string><![CDATA[PUG]]></string>
     <key>BBLMLanguageDisplayName</key>
-    <string><![CDATA[Jade]]></string>
+    <string><![CDATA[Pug]]></string>
     <key>BBLMSuffixMap</key>
     <array>
         <dict>
             <key>BBLMLanguageSuffix</key>
-            <string><![CDATA[.jade]]></string>
+            <string><![CDATA[.pug]]></string>
         </dict>
     </array>
     <key>BBLMColorsSyntax</key>
@@ -153,7 +153,7 @@
     <key>BBLMCanSpellCheckCodeRuns</key>
     <true/>
     <key>BBLMReferenceSearchURLTemplate</key>
-    <string>https://github.com/visionmedia/jade?#__SYMBOLNAME__</string>
+    <string>https://github.com/pugjs/pug?#__SYMBOLNAME__</string>
     <key>Language Features</key>
     <dict>
         <key>Comment Pattern</key>
